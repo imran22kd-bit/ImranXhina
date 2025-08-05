@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+  <meta charset="UTF-8">
+  <title>Imran X Hina | TikTok Video Downloader</title>
+  <style>
+    body { text-align: center; font-family: sans-serif; }
+    h1 { color: purple; }
+    h2 { color: darkgray; }
+    .social-links a, .channel-links a {
+      margin: 10px;
+      display: inline-block;
+      text-decoration: none;
+      color: blue;
+    }
+    input { padding: 10px; width: 300px; margin-top: 10px; }
+    button { padding: 10px 20px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+  <h1>Imran X Hina</h1>
+  <h2>TikTok Video Downloader - Fast & Full</h2>
+
+  <div class="social-links"
+  </div>
+
+  <hr>
+
+  <p>HereTikTok video Link Paste here:</p>
+  <input type="text" placeholder="TikTok Video link paste Here" />
+  <br>
+  <button>Download</button>
+
+  <hr>
+
+  <div class="channel-links">
+    <p>My Channels:</p>
+    <a href="https://chat.whatsapp.com/L4BnbGwOw9xCb1SR6S8VSX?mode=ac_t">WhatsApp Group</a>
+    <a href="https://www.facebook.com/share/1AudvYkrPi/">Facebook</a>
+    <a href="https://www.instagram.com/m_imran786h?igsh=MXFibGx1YjdxdjI4aw==">Instagram</a>
+  </div>
+
+</body>
+</html>
