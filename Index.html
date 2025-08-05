@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TikTok Downloader Imran X Hina </title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html,body{height:100%;font-family:'Segoe UI',sans-serif;background:black;color:white;overflow:hidden}
+    canvas{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0}
+    .container{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;background:rgba(0,0,0,.6);border-radius:20px;padding:25px;width:90%;max-width:400px;box-shadow:0 0 30px #00f2ff;text-align:center}
+    h1{margin-bottom:20px;color:#00f2ff}
+    input{width:100%;padding:12px;margin:10px 0;border-radius:10px;border:none;font-size:16px;background:#111;color:white}
+    button{background:#00f2ff;color:black;font-weight:bold;padding:12px;width:100%;border-radius:10px;border:none;cursor:pointer;font-size:16px;transition:.3s}
+    button:hover{background:#00c2d4}
+    #result{margin-top:20px;color:white;font-size:15px}
+    .whatsapp-link{display:inline-block;margin-top:20px;background:#25d366;color:black;padding:10px 20px;border-radius:25px;text-decoration:none;font-weight:bold;box-shadow:0 0 15px rgba(37,211,102,.7);transition:.3s}
+    .whatsapp-link:hover{background:#1ebe5d}
+    .download-btn{background:#00f2ff;color:black;padding:12px 30px;border-radius:10px;text-decoration:none;display:inline-block;margin-top:15px;font-size:16px;font-weight:bold;transition:.3s}
+    .download-btn:hover{background:#00c2d4}
+  </style>
+</head>
+<body>
+
+<canvas id="matrixCanvas"></canvas>
+
+<div class="container">
+  <h1>🎬Imran X Hina</h1>
+  <input type="url" id="videoUrl" placeholder="Paste TikTok video URL" required />
+  <button onclick="downloadVideo()">Download Video</button>
+  <div id="result"> </div>
+  <!-- WhatsApp link -->
+  <a class="https://chat.whatsapp.com/L4BnbGwOw9xCb1SR6S8VSX?mode=ac_t" id="Imran X hina" href="#">Join Groupl</a>
+</div>
+
+<script>
+
+  const canvas = document.getElementById("matrixCanvas");
+  const ctx = canvas.getContext("2d");
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+  const chars = "01";
+  const fontSize = 16;
+  const columns = canvas.width / fontSize;
+  const drops = Array(Math.floor(columns)).fill(1);
+
+  function drawMatrix() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#00f2ff";
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+      const text = chars[Math.floor(Math.random() * chars.length)];
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+      drops[i]++;
+    }
+  }
+
+  setInterval(drawMatrix, 33);
+
+ 
+  async function downloadVideo() {
+    const url = document.getElementById("videoUrl").value;
+    const resultDiv = document.getElementById("result");
+
+    if (!url.includes("tiktok.com")) {
+      resultDiv.innerHTML = "❌ Please enter a valid TikTok URL.";
+      return;
+    }
+
+    resultDiv.innerHTML = "⏳ Fetching video...";
+
+    try {
+      // API request to get the video
+      const res = await fetch(`https://tikwm.com/api/?url=${encodeURIComponent(url)}`);
+      const data = await res.json();
+
+      if (data && data.data && data.data.play) {
+        resultDiv.innerHTML = `
+          ✅ Video Ready!<br><br>
+          <a href="${data.data.play}" download target="_blank" class="download-btn">Click here to download</a>
+        `;
+      } else {
+        resultDiv.innerHTML = "❌ Could not fetch video.";
+      }
+    } catch (err) {
+      console.error(err);
+      resultDiv.innerHTML = "❌ Error while fetching video.";
+    }
+  }
+
+  const Daniyal-Abbas = atob("aHR0cHM6Ly93aGF0c2FwcC5jb20vY2hhbm5lbC8wMDI5VmFqWnBxTDdUOGJSdlVxQVUyM0E=");
+  document.getElementById("daniyal-abbas").href = Daniyal-Abbas;
+</script>
+
+</body>
+</html>
